@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 body {
     font-family: var(--fontFamily);
     display: grid;
@@ -69,6 +73,7 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-top: 3rem;
 }
@@ -87,7 +92,56 @@ main {
     padding: 2rem 3rem;
 }
 
+.titleChoice {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    margin-top: 3rem;
+}
+.choiceIndicator{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
 
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.result h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.result button {
+    align-self: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: .8rem;
+    font-family: var(--fontFamily);
+    font-size: 1.7rem;
+    padding: 5px;
+    width: 10rem;
+}
+
+.result button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.open {
+    display: none;
+}
 
 footer {
     width: 100%;
