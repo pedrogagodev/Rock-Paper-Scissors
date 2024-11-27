@@ -4,6 +4,7 @@
     --fontFamily: "Epilogue", serif;
 
     --primary-color: #000B58;
+    --primary-color-hover: #030936;
     --secondary-color: #3B4262;
     --third-color: #FFF4B7;
 }
@@ -22,6 +23,10 @@ body {
     min-height: 100vh;
 }
 
+button {
+    font-family: var(--fontFamily);
+}
+
 header {
     display: flex;
     align-items: center;
@@ -34,13 +39,34 @@ header {
 
 header > div > div {
     border: 1px solid white;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: 5px 5px 0 0;
     line-height: 150%;
+    font-size: 1.3rem;
+}
+header h1 {
+    width: 20rem;
+    font-size: 2.5rem;
 }
 
 header > div h2 {
     margin-bottom: 1rem;
+}
+
+
+header button {
+    width: 100%;
+    padding: 1.3rem;
+    border-radius: 0 0 5px 5px;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid white;
+    border-top: 0;
+    font-size: 1.3rem;
+}
+
+header button:hover {
+    background-color: var(--primary-color-hover);
 }
 
 footer {
