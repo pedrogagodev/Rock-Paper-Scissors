@@ -19,6 +19,7 @@ button:hover {
 }
 
 body {
+    position: relative;
     font-family: var(--fontFamily);
     display: grid;
     place-items: center;
@@ -81,6 +82,7 @@ main {
 .initialScreen {
     display: flex;
     flex-direction: column;
+    margin-bottom: 7rem;
 }
 .initialScreen  h2 {
     font-size: 3rem;
@@ -142,6 +144,55 @@ main {
 .open {
     display: none;
 }
+
+.modalWrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalWrapper {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    inset: 0;
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modalCard {
+    position: relative;
+    background-color: white;
+    padding: 1rem;
+}
+.modalCard h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+ul {
+    list-style: none;
+    background-color:#3b42622c;
+    padding: 1rem;
+    line-height: 200%;
+    font-size: 1.2rem;
+}
+
+.modalCard, ul {
+    border-radius: 5px;
+    
+}
+
+.modalCard img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    padding: 5px 5px 0 0;
+}
+
 
 footer {
     width: 100%;
