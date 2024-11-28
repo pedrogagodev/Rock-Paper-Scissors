@@ -2,6 +2,7 @@ const initialScreen = document.querySelector('.initialScreen')
 const resultScreen = document.querySelector('.resultScreen')
 const modalScreen = document.querySelector('.modalWrapper')
 const header = document.querySelector('.header')
+const result = document.querySelector('.resultScreen .result h3')
 
 
 
@@ -42,22 +43,12 @@ function makeMachineChoice() {
 
     machineChoice = options[idx]
 
-    /*if (machineChoice == 'rock') {
-        rockInARowCount++
-    }
-    if (machineChoice == 'rock' && rockInARowCount >= 2) {
-        console.log('Rock 2 times in a row')
-        makeMachineChoice()
-    }
-    console.log(machineChoice)*/
 }   
 
 makeMachineChoice()
-console.log(machineChoice)
 
 
-
-function result() {
+function calculateResult() {
     if (isRockClicked == true) {
         playerChoice = 'rock'
     }
@@ -70,34 +61,38 @@ function result() {
 
     
     if (playerChoice == 'rock' && machineChoice == 'paper') {
-        console.log('Player lose')
-    }
-    else if (playerChoice == 'rock' && machineChoice == 'rock') {
-        console.log('Draw')
+        result.innerText = 'Player lose!'
+        machineScore++
+        header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
     }
     else if (playerChoice == 'rock' && machineChoice == 'scissors') {
-        console.log('Player wins')
-    }
-    else if (playerChoice == 'paper' && machineChoice == 'paper') {
-        console.log('Draw')
+        result.innerText = 'Player wins!'
+        playerScore++
+        header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
     }
     else if (playerChoice == 'paper' && machineChoice == 'rock') {
-        console.log('Player wins')
+        result.innerText = 'Player wins!'
+        playerScore++
+        header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
     }
     else if (playerChoice == 'paper' && machineChoice == 'scissors') {
-        console.log('Player lose')
+        result.innerText = 'Player lose!'
+        machineScore++
+        header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
     }
     else if (playerChoice == 'scissors' && machineChoice == 'paper') {
-        console.log('Player wins')
+        result.innerText = 'Player wins!'
+        playerScore++
+        header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
     }
     else if (playerChoice == 'scissors' && machineChoice == 'rock') {
-        console.log('Player lose')
+        result.innerText = 'Player lose!'
+        machineScore++
+        header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
     }
-    else if (playerChoice == 'scissors' && machineChoice == 'scissors') {
-        console.log('Draw')
-    }
+
     else {
-        console.log('Draw')
+        result.innerText = 'Draw!'
     }
         
 }
@@ -140,7 +135,7 @@ function checkRockClicked() {
     }else {
         initialScreen.classList.add('hide')
         resultScreen.classList.remove('hide')
-        result()
+        calculateResult()
         makeMachineChoice()
     }
 
@@ -158,7 +153,7 @@ function checkPaperClicked() {
     rockInARowCount = 0
     initialScreen.classList.add('hide')
     resultScreen.classList.remove('hide')
-    result()
+    calculateResult()
     makeMachineChoice()
 }
 
@@ -168,7 +163,7 @@ function checkScissorsClicked() {
     rockInARowCount = 0
     initialScreen.classList.toggle('hide')
     resultScreen.classList.remove('hide')
-    result()
+    calculateResult()
     makeMachineChoice()
 }
 
