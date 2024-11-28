@@ -18,6 +18,8 @@ button:hover {
     cursor: pointer;
 }
 
+
+
 body {
     position: relative;
     font-family: var(--fontFamily);
@@ -79,6 +81,7 @@ main {
     padding-top: 3rem;
 }
 
+
 .initialScreen {
     display: flex;
     flex-direction: column;
@@ -92,6 +95,10 @@ main {
 
 .initialScreen img {
     padding: 2rem 3rem;
+}
+.initialScreen button {
+    background-color: white;
+    border: none;
 }
 
 .titleChoice {
@@ -141,7 +148,7 @@ main {
     background-color: var(--primary-color-hover);
 }
 
-.open {
+.hide {
     display: none;
 }
 

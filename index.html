@@ -20,24 +20,30 @@
                     <p>Player:  0</p>
                     <p>Machine: 0</p>
                 </div>
-                <button>Reset</button>
+                <button id="btnReset">Reset</button>
             </div>
         </header>
 
         <main>
-            <div class="initialScreen open">
+            <div class="initialScreen ">
                 <h2>Choose one:</h2>
                 <div>
-                    <img src="assets/icon-rock.svg" alt="Rock choice">
-                    <img src="assets/icon-paper.svg" alt="Paper choice">
-                    <img src="assets/icon-scissors.svg" alt="Scissors choice">
+                    <button>
+                        <img src="assets/icon-rock.svg" alt="Rock choice">
+                    </button>
+                    <button>
+                        <img src="assets/icon-paper.svg" alt="Paper choice">
+                    </button>
+                    <button>
+                        <img src="assets/icon-scissors.svg" alt="Scissors choice">
+                    </button>
 
                 </div>
 
 
             </div>
 
-            <div class="resultScreen ">
+            <div class="resultScreen hide">
                 <div class="titleChoice">
                     <h3>Player</h3>
                     <h3>Machine</h3>
@@ -49,13 +55,16 @@
                 </div>
                 <div class="result ">  
                     <h3>DRAW</h3>
-                    <button>Try again</button>
+                    <button id="btnTryAgain">Try again</button>
                  </div>
             </div>
 
             <div class="modalWrapper">
                 <div class="modalCard">
-                <img src="assets/close.svg" alt="Close button" class="closeButton">
+                <button id="btnCloseModal">
+                    <img src="assets/close.svg" alt="Close button" class="closeButton">
+                </button>
+
                 <h2>Rules</h2>
                     <ul>
                         <li>- Rock wins against Scissors.</li>
@@ -70,7 +79,7 @@
         </main>
 
         <footer>
-            <button>View Rules</button>
+            <button id="btnRules">View Rules</button>
             <p>Developed by <a href="https://github.com/pedrogagodev" target="_blank">Pedro Oliveira</a> </p>
         </footer>
 </body>
