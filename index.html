@@ -12,29 +12,29 @@
 </head>
 <body>
     
-        <header>
+        <header class="header">
             <h1>Rock Papers Scissors</h1>
             <div>
                 <div>
                     <h2>Score:</h2>
-                    <p>Player:  0</p>
-                    <p>Machine: 0</p>
+                    <p id="playerScore">Player:  3</p>
+                    <p id="machineScore">Machine: 2</p>
                 </div>
                 <button id="btnReset">Reset</button>
             </div>
         </header>
 
         <main>
-            <div class="initialScreen ">
+            <div class="initialScreen hide">
                 <h2>Choose one:</h2>
                 <div>
-                    <button>
+                    <button id="rockChoice">
                         <img src="assets/icon-rock.svg" alt="Rock choice">
                     </button>
-                    <button>
+                    <button id="paperChoice">
                         <img src="assets/icon-paper.svg" alt="Paper choice">
                     </button>
-                    <button>
+                    <button id="scissorsChoice">
                         <img src="assets/icon-scissors.svg" alt="Scissors choice">
                     </button>
 
@@ -43,7 +43,7 @@
 
             </div>
 
-            <div class="resultScreen hide">
+            <div class="resultScreen ">
                 <div class="titleChoice">
                     <h3>Player</h3>
                     <h3>Machine</h3>
@@ -59,7 +59,7 @@
                  </div>
             </div>
 
-            <div class="modalWrapper">
+            <div class="modalWrapper ">
                 <div class="modalCard">
                 <button id="btnCloseModal">
                     <img src="assets/close.svg" alt="Close button" class="closeButton">
