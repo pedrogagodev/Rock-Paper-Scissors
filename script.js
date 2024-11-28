@@ -22,6 +22,7 @@ let playerChoice
 let isRockClicked = false
 let isPaperClicked = false
 let isScissorsClicked = false
+let previousChoice
 
 btnReset.addEventListener('click', handleResetClick);
 btnTryAgain.addEventListener('click', handleTryAgainClick);
@@ -130,14 +131,31 @@ function handleCloseModal() {
 }
 function checkRockClicked() {
     isRockClicked = true
-    initialScreen.classList.add('hide')
-    resultScreen.classList.remove('hide')
-    result()
-    makeMachineChoice()
-}
+    if (rockInARowCount == 0) {
+        previousChoice = ''
+    }
+    rockInARowCount++
+    if (rockInARowCount > 1) {
+        console.log('não é permitido 2 vezes rock')
+    }else {
+        initialScreen.classList.add('hide')
+        resultScreen.classList.remove('hide')
+        result()
+        makeMachineChoice()
+    }
+
+    if (rockInARowCount == 1 && previousChoice != 'rock' && previousChoice != undefined && previousChoice != '') {
+        rockInARowCount = 0
+        
+    }
+
+    }
+
 
 function checkPaperClicked() {
     isPaperClicked = true
+    previousChoice = 'paper'
+    rockInARowCount = 0
     initialScreen.classList.add('hide')
     resultScreen.classList.remove('hide')
     result()
@@ -146,6 +164,8 @@ function checkPaperClicked() {
 
 function checkScissorsClicked() {
     isScissorsClicked = true
+    previousChoice = 'scissors'
+    rockInARowCount = 0
     initialScreen.classList.toggle('hide')
     resultScreen.classList.remove('hide')
     result()
