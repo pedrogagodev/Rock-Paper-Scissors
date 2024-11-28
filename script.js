@@ -3,6 +3,8 @@ const resultScreen = document.querySelector('.resultScreen')
 const modalScreen = document.querySelector('.modalWrapper')
 const header = document.querySelector('.header')
 const result = document.querySelector('.resultScreen .result h3')
+const playerChoiceImg = document.getElementById('playerChoice')
+const machineChoiceImg = document.getElementById('machineChoice')
 
 
 
@@ -64,35 +66,59 @@ function calculateResult() {
         result.innerText = 'Player lose!'
         machineScore++
         header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
+        playerChoiceImg.src = 'assets/icon-rock.svg'
+        machineChoiceImg.src = 'assets/icon-paper.svg'
     }
     else if (playerChoice == 'rock' && machineChoice == 'scissors') {
         result.innerText = 'Player wins!'
         playerScore++
         header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
+        playerChoiceImg.src = 'assets/icon-rock.svg'
+        machineChoiceImg.src = 'assets/icon-scissors.svg'
+    }
+    else if (playerChoice == 'rock' && machineChoice == 'rock') {
+        result.innerText = 'Draw!'
+        playerChoiceImg.src = 'assets/icon-rock.svg'
+        machineChoiceImg.src = 'assets/icon-rock.svg'
     }
     else if (playerChoice == 'paper' && machineChoice == 'rock') {
         result.innerText = 'Player wins!'
         playerScore++
         header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
+        playerChoiceImg.src = 'assets/icon-paper.svg'
+        machineChoiceImg.src = 'assets/icon-rock.svg'
     }
     else if (playerChoice == 'paper' && machineChoice == 'scissors') {
         result.innerText = 'Player lose!'
         machineScore++
         header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
+        playerChoiceImg.src = 'assets/icon-paper.svg'
+        machineChoiceImg.src = 'assets/icon-scissors.svg'
+    }
+    else if (playerChoice == 'paper' && machineChoice == 'paper') {
+        result.innerText = 'Draw!'
+        playerChoiceImg.src = 'assets/icon-paper.svg'
+        machineChoiceImg.src = 'assets/icon-paper.svg'
     }
     else if (playerChoice == 'scissors' && machineChoice == 'paper') {
         result.innerText = 'Player wins!'
         playerScore++
         header.querySelector('#playerScore').innerText = `Player: ${playerScore}`
+        playerChoiceImg.src = 'assets/icon-scissors.svg'
+        machineChoiceImg.src = 'assets/icon-paper.svg'
     }
     else if (playerChoice == 'scissors' && machineChoice == 'rock') {
         result.innerText = 'Player lose!'
         machineScore++
         header.querySelector('#machineScore').innerText = `Machine: ${machineScore}`
+        playerChoiceImg.src = 'assets/icon-scissors.svg'
+        machineChoiceImg.src = 'assets/icon-rock.svg'
     }
 
     else {
         result.innerText = 'Draw!'
+        playerChoiceImg.src = 'assets/icon-scissors.svg'
+        machineChoiceImg.src = 'assets/icon-scissors.svg'
     }
         
 }
