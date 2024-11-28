@@ -221,3 +221,63 @@ footer a {
     text-decoration: none;
     color: var(--third-color);
 }
+
+@media (min-width: 1440px) {
+   header {
+    justify-content: space-between;
+    padding: 4rem 18rem;
+   }
+
+   header h1 {
+    width: auto;
+    font-size: 5rem;
+   }
+
+   .initialScreen img:hover {
+        cursor: pointer;
+        scale: 1.6;
+   }
+
+   
+
+   .titleChoice {
+        font-size: 3rem;
+        gap: 6rem;
+        margin-bottom: 2rem;
+   }
+
+   .choiceIndicator, .titleChoice {
+    margin-left: 5.5rem;
+   }
+
+
+   .choiceIndicator img {
+        width: 7rem;
+   }
+
+   .result h3 {
+        font-size: 3rem ;
+   }
+
+   .result button {
+         font-size: 2rem;
+         width: 15rem;
+         padding: 1rem;
+   }
+
+   .modalCard h2 {
+    font-size: 3rem;
+    margin-top: 1rem;
+   }
+
+   ul {
+    padding: 3rem;
+    font-size: 1.8rem;
+    margin: 1rem 3rem 3rem;
+   }
+
+   .modalCard img:hover {
+        cursor: pointer;
+   }
+
+}
