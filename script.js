@@ -3,6 +3,7 @@ const resultScreen = document.querySelector('.resultScreen')
 const modalScreen = document.querySelector('.modalWrapper')
 const header = document.querySelector('.header')
 const result = document.querySelector('.resultScreen .result h3')
+const alertError = document.querySelector('.alertError')
 const playerChoiceImg = document.getElementById('playerChoice')
 const machineChoiceImg = document.getElementById('machineChoice')
 
@@ -31,6 +32,7 @@ btnReset.addEventListener('click', handleResetClick);
 btnTryAgain.addEventListener('click', handleTryAgainClick);
 btnRules.addEventListener('click', handleRulesClick);
 btnCloseModal.addEventListener('click', handleCloseModal);
+window.addEventListener('keydown', handleKeydown)
 btnRockChoice.addEventListener('click', checkRockClicked);
 btnPaperChoice.addEventListener('click', checkPaperClicked);
 btnScissorsChoice.addEventListener('click', checkScissorsClicked);
@@ -150,6 +152,13 @@ function handleRulesClick() {
 function handleCloseModal() {
     modalScreen.classList.remove('open')
 }
+
+function handleKeydown(event) {
+    if (event.key === 'Escape') {
+        handleCloseModal()
+    }
+}
+
 function checkRockClicked() {
     isRockClicked = true
     if (rockInARowCount == 0) {
@@ -157,10 +166,11 @@ function checkRockClicked() {
     }
     rockInARowCount++
     if (rockInARowCount > 1) {
-        console.log('não é permitido 2 vezes rock')
+        alertError.classList.add('open')
     }else {
         initialScreen.classList.add('hide')
         resultScreen.classList.remove('hide')
+        alertError.classList.remove('open')
         calculateResult()
         makeMachineChoice()
     }
@@ -179,6 +189,7 @@ function checkPaperClicked() {
     rockInARowCount = 0
     initialScreen.classList.add('hide')
     resultScreen.classList.remove('hide')
+    alertError.classList.remove('open')
     calculateResult()
     makeMachineChoice()
 }
@@ -189,6 +200,7 @@ function checkScissorsClicked() {
     rockInARowCount = 0
     initialScreen.classList.toggle('hide')
     resultScreen.classList.remove('hide')
+    alertError.classList.remove('open')
     calculateResult()
     makeMachineChoice()
 }
