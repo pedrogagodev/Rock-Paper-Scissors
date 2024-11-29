@@ -6,6 +6,7 @@
     --primary-color-hover: #030936;
     --secondary-color: #3B4262;
     --third-color: #FFF4B7;
+    --error-color: #F03E3E;
 }
 
 * {
@@ -81,6 +82,29 @@ main {
     padding-top: 3rem;
 }
 
+.alertError.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+.alertError {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--error-color);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 1px 0;
+    font-size: .9rem;
+
+    visibility: hidden;
+    opacity: 0;
+    
+    transform: translateY(-30px);
+    transition: .5s;
+}
 
 .initialScreen {
     display: flex;
@@ -240,6 +264,11 @@ footer a {
     font-size: 5rem;
    }
 
+   .alertError {
+    font-size: 1.4rem;
+    padding: 8px 0;
+   }
+
    .initialScreen img:hover {
         cursor: pointer;
         scale: 1.6;
@@ -286,5 +315,11 @@ footer a {
    .modalCard img:hover {
         cursor: pointer;
    }
+   footer p {
+    font-size: 1.3rem;
+   }
 
+   footer button {
+    font-size: 2.5em;
+   }
 }
