@@ -16,6 +16,8 @@ import {
     btnTryAgain,
     btnRules,
     btnCloseModal,
+    buttons,
+    subtitles,
     playerScore,
     machineScore,
     rockInARowCount,
@@ -71,4 +73,7 @@ modalScreen.addEventListener('click', button.handleCloseModalOutCard)
 btnRockChoice.addEventListener('click', choice.checkRockClicked);
 btnPaperChoice.addEventListener('click', choice.checkPaperClicked);
 btnScissorsChoice.addEventListener('click', choice.checkScissorsClicked);
+buttons.addEventListener('mouseover', () => {subtitles.classList.add('show')})
+buttons.addEventListener('mouseleave', () => {subtitles.classList.remove('show')})
+
 

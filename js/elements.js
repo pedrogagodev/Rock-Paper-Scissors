@@ -5,9 +5,12 @@ const modalCard = document.querySelector('.modalCard')
 const header = document.querySelector('.header')
 const result = document.querySelector('.resultScreen .result h3')
 const alertError = document.querySelector('.alertError')
+const subtitles = document.querySelector('.subtitle')
 const playerChoiceImg = document.getElementById('playerChoice')
 const machineChoiceImg = document.getElementById('machineChoice')
 
+
+const buttons = document.querySelector('.choices')
 const btnRockChoice = document.querySelector('#rockButton')
 const btnPaperChoice = document.querySelector('#paperButton')
 const btnScissorsChoice = document.querySelector('#scissorsButton')
@@ -44,6 +47,8 @@ export {
     btnRules,
     btnCloseModal,
     modalCard,
+    buttons,
+    subtitles,
     playerScore,
     machineScore,
     rockInARowCount,

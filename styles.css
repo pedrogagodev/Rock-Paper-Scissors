@@ -144,9 +144,37 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 5rem;
-
     font-size: 5rem;
     font-weight: bold;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    visibility: hidden;
+    color: white;
+    font-weight: bold;
+}
+
+.subtitle span:first-of-type { 
+    transform:translateX(.7rem);
+}
+
+.subtitle span:first-of-type + span {
+    transform:translateX(1.1rem);
+}
+
+ .show {
+    visibility: visible;
+    animation-name: topdown;
+    animation-duration: 500ms;
+}
+
+.subtitle span {
+    background-color: var(--secondary-color);
+    border-radius: 1.6rem;
+    padding: .8rem 1.6rem;
 }
 
 .result {
@@ -265,6 +293,18 @@ footer a {
     color: var(--third-color);
 }
 
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 @media (min-width: 1440px) {
    header {
     justify-content: space-between;
@@ -293,6 +333,8 @@ footer a {
    .initialScreen img:hover {
         cursor: pointer;
         scale: 1.6;
+        transition-timing-function: ease-in;
+        transition-duration: 200ms;
    }
 
    
