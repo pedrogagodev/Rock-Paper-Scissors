@@ -10,11 +10,6 @@ export default function Button({
     isPaperClicked,
     isScissorsClicked
 }) {
-    function handleResetClick() {
-        header.querySelector('#playerScore').innerText = `Player: 0`
-        header.querySelector('#machineScore').innerText = `Machine: 0`
-        resetScore()    
-    }
     function handleTryAgainClick() {
         resultScreen.classList.toggle('hide')
         initialScreen.classList.toggle('hide')
@@ -38,6 +33,8 @@ export default function Button({
     }
 
     function resetScore() {
+        header.querySelector('#playerScore').innerText = `Player: 0`
+        header.querySelector('#machineScore').innerText = `Machine: 0`
         playerScore = 0
         machineScore = 0
         rockInARowCount = 0
@@ -45,7 +42,6 @@ export default function Button({
 
 
     return {
-        handleResetClick,
         handleTryAgainClick,
         handleRulesClick,
         handleCloseModal,

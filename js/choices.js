@@ -28,9 +28,6 @@
     function calculateResult() {
         makeMachineChoice()
         checkPlayerChoice()
-        
-        console.log(`Player choice ${playerChoice}`)
-        console.log(`Machine choice ${machineChoice}`)
 
         if (playerChoice == 'rock' && machineChoice == 'paper') {
             result.innerText = 'Player lose!'
@@ -100,44 +97,19 @@
     }
 
     function checkRockClicked() {
-        isPaperClicked = false
-        isScissorsClicked = false
-        isRockClicked = true
-        if (rockInARowCount == 0) {
-            previousChoice = ''
-        }
-        rockInARowCount++
-        if (rockInARowCount > 1) {
-            alertError.classList.add('open')
-        }else {
-            switchToResultScreen()
-            calculateResult()
-        }
-    
-        if (rockInARowCount == 1 && previousChoice != 'rock' && previousChoice != undefined && previousChoice != '') {
-            rockInARowCount = 0
-            
-        }
-    
+        isRockClickedTrue()
+        checkRock2InARow()
         }
     
     
     function checkPaperClicked() {
-        isRockClicked = false
-        isScissorsClicked = false
-        isPaperClicked = true
-        previousChoice = 'paper'
-        rockInARowCount = 0
+        isPaperClickedTrue()
         switchToResultScreen()
         calculateResult()
     }
     
     function checkScissorsClicked() {
-        isRockClicked = false
-        isPaperClicked = false
-        isScissorsClicked = true
-        previousChoice = 'scissors'
-        rockInARowCount = 0
+        isScissorsClickedTrue()
         switchToResultScreen()
         calculateResult()
     }
@@ -154,6 +126,44 @@
         }
     }
 
+    function checkRock2InARow() {
+        if (rockInARowCount == 0) {
+            previousChoice = ''
+        }
+        rockInARowCount++
+        if (rockInARowCount > 1) {
+            alertError.classList.add('open')
+        }else {
+            switchToResultScreen()
+            calculateResult()
+        }
+    
+        if (rockInARowCount == 1 && previousChoice != 'rock' && previousChoice != undefined && previousChoice != '') {
+            rockInARowCount = 0
+            
+        }
+    
+    }
+
+    function isRockClickedTrue() {
+        isPaperClicked = false
+        isScissorsClicked = false
+        isRockClicked = true
+    }
+    function isPaperClickedTrue() {
+        isPaperClicked = true
+        isScissorsClicked = false
+        isRockClicked = false
+        previousChoice = 'paper'
+        rockInARowCount = 0
+    }
+    function isScissorsClickedTrue() {
+        isPaperClicked = false
+        isScissorsClicked = true
+        isRockClicked = false
+        previousChoice = 'scissors'
+        rockInARowCount = 0
+    }
 
 
     return {
