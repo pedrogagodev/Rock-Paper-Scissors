@@ -1,6 +1,7 @@
 const initialScreen = document.querySelector('.initialScreen')
 const resultScreen = document.querySelector('.resultScreen')
 const modalScreen = document.querySelector('.modalWrapper')
+const modalCard = document.querySelector('.modalCard')
 const header = document.querySelector('.header')
 const result = document.querySelector('.resultScreen .result h3')
 const alertError = document.querySelector('.alertError')
@@ -42,6 +43,7 @@ export {
     btnTryAgain,
     btnRules,
     btnCloseModal,
+    modalCard,
     playerScore,
     machineScore,
     rockInARowCount,
