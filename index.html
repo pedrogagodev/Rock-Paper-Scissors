@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper and Scissors</title>
+    <link rel="shortcut icon" type="image/svg" href="assets/favicon-32x32.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="js/index.js" type="module"></script>
 </head>
 <body>
     
         <header class="header">
-            <h1>Rock Papers Scissors</h1>
+            <h1>Rock Paper Scissors</h1>
             <div>
                 <div>
                     <h2>Score:</h2>
@@ -28,17 +29,17 @@
             <h2>You are not allowed to choose "rock" twice in a row, please choose another option.</h2>
         </div>
 
-        <main>
+        <main>  
             <div class="initialScreen ">
                 <h2>Choose one:</h2>
-                <div>
-                    <button id="rockChoice">
+                <div class="choices">
+                    <button id="rockButton">
                         <img src="assets/icon-rock.svg" alt="Rock choice">
                     </button>
-                    <button id="paperChoice">
+                    <button id="paperButton">
                         <img src="assets/icon-paper.svg" alt="Paper choice">
                     </button>
-                    <button id="scissorsChoice">
+                    <button id="scissorsButton">
                         <img src="assets/icon-scissors.svg" alt="Scissors choice">
                     </button>
 

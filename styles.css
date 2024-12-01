@@ -44,8 +44,9 @@ header > div > div {
     border: 1px solid white;
     padding: 1.5rem;
     border-radius: 5px 5px 0 0;
-    line-height: 150%;
-    font-size: 1.3rem;
+    line-height: 170%;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 header h1 {
@@ -65,7 +66,8 @@ header button {
     color: white;
     border: 1px solid white;
     border-top: 0;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 header button:hover {
@@ -179,6 +181,7 @@ main {
 .modalWrapper.open {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
 }
 
 .modalWrapper {
@@ -190,12 +193,16 @@ main {
 
     opacity: 0;
     visibility: hidden;
+
+    transform: translateY(-110px);
+    transition: .5s;
 }
 
 .modalCard {
     position: relative;
     background-color: white;
     padding: 1rem;
+
 }
 .modalCard h2 {
     text-align: center;
@@ -259,9 +266,18 @@ footer a {
     padding: 4rem 18rem;
    }
 
+   header > div > div {
+    line-height: 170%;
+    font-size: 2rem;
+   }
+
    header h1 {
     width: auto;
     font-size: 5rem;
+   }
+
+   header button {
+    font-size: 2.5rem;
    }
 
    .alertError {
