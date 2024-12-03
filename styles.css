@@ -161,11 +161,23 @@ main {
     transform:translateX(.7rem);
 }
 
-.subtitle span:first-of-type + span {
+.subtitle span:nth-child(2) {
     transform:translateX(1.1rem);
 }
 
- .show {
+.rock span:first-of-type {
+    visibility: visible;
+    animation-name: topdown;
+    animation-duration: 500ms;
+}
+
+.paper span:nth-child(2) {
+    visibility: visible;
+    animation-name: topdown;
+    animation-duration: 500ms;
+}
+
+.scissors span:last-child {
     visibility: visible;
     animation-name: topdown;
     animation-duration: 500ms;

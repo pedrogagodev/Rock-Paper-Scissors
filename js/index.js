@@ -73,7 +73,11 @@ modalScreen.addEventListener('click', button.handleCloseModalOutCard)
 btnRockChoice.addEventListener('click', choice.checkRockClicked);
 btnPaperChoice.addEventListener('click', choice.checkPaperClicked);
 btnScissorsChoice.addEventListener('click', choice.checkScissorsClicked);
-buttons.addEventListener('mouseover', () => {subtitles.classList.add('show')})
-buttons.addEventListener('mouseleave', () => {subtitles.classList.remove('show')})
+btnRockChoice.addEventListener('mouseover', () => {subtitles.classList.add('rock')})
+btnRockChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('rock')})
+btnPaperChoice.addEventListener('mouseover', () => {subtitles.classList.add('paper')})
+btnPaperChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('paper')})
+btnScissorsChoice.addEventListener('mouseover', () => {subtitles.classList.add('scissors')})
+btnScissorsChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('scissors')})
 
 
