@@ -16,6 +16,8 @@ import {
     btnTryAgain,
     btnRules,
     btnCloseModal,
+    buttons,
+    subtitles,
     playerScore,
     machineScore,
     rockInARowCount,
@@ -24,7 +26,8 @@ import {
     isRockClicked,
     isScissorsClicked,
     playerChoice,
-    previousChoice
+    previousChoice,
+    modalCard
 } from "./elements.js"
 
 const button = Button({
@@ -37,7 +40,8 @@ const button = Button({
     rockInARowCount,
     isRockClicked,
     isPaperClicked,
-    isScissorsClicked
+    isScissorsClicked,
+    modalCard
 })
 
 const choice = Choice ({
@@ -65,7 +69,15 @@ btnTryAgain.addEventListener('click', button.handleTryAgainClick);
 btnRules.addEventListener('click', button.handleRulesClick);
 btnCloseModal.addEventListener('click', button.handleCloseModal);
 window.addEventListener('keydown', button.handleKeydown)
+modalScreen.addEventListener('click', button.handleCloseModalOutCard)
 btnRockChoice.addEventListener('click', choice.checkRockClicked);
 btnPaperChoice.addEventListener('click', choice.checkPaperClicked);
 btnScissorsChoice.addEventListener('click', choice.checkScissorsClicked);
+btnRockChoice.addEventListener('mouseover', () => {subtitles.classList.add('rock')})
+btnRockChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('rock')})
+btnPaperChoice.addEventListener('mouseover', () => {subtitles.classList.add('paper')})
+btnPaperChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('paper')})
+btnScissorsChoice.addEventListener('mouseover', () => {subtitles.classList.add('scissors')})
+btnScissorsChoice.addEventListener('mouseleave', () => {subtitles.classList.remove('scissors')})
+
 

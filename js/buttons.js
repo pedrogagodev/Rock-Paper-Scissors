@@ -8,7 +8,8 @@ export default function Button({
     rockInARowCount,
     isRockClicked,
     isPaperClicked,
-    isScissorsClicked
+    isScissorsClicked,
+    modalCard
 }) {
     function handleTryAgainClick() {
         resultScreen.classList.toggle('hide')
@@ -24,6 +25,12 @@ export default function Button({
 
     function handleCloseModal() {
         modalScreen.classList.remove('open')
+    }
+
+    function handleCloseModalOutCard(event) {
+        if (!modalCard.contains(event.target)) {
+            handleCloseModal()
+          }
     }
 
     function handleKeydown(event) {
@@ -46,6 +53,7 @@ export default function Button({
         handleRulesClick,
         handleCloseModal,
         handleKeydown,
+        handleCloseModalOutCard,
         resetScore,
     }
 }
